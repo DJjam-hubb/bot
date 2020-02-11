@@ -1,3 +1,7 @@
+wrapt==1.11.2
+datetime
+zipp==2.0.0
+telebot
 altgraph==0.17
 antiorm==1.2.1
 astroid==2.3.3
@@ -73,5 +77,5 @@ typed-ast==1.4.1
 typing==3.7.4.1
 urllib3==1.25.8
 webencodings==0.5.1
-wrapt==1.11.2
-zipp==2.0.0
+
+
