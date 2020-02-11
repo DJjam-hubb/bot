@@ -1,1 +1,1 @@
-worker: start.exe
+worker: python bot.py
