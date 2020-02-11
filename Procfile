@@ -1,1 +1,1 @@
-worker: python start.bat
+worker: start.bat
