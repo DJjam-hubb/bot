@@ -13,7 +13,7 @@ def get_text_messages(message):
     if message.text == "/start":
         bot.send_message(message.from_user.id, "Привет,я Шпипс отправь мне любое сообщение и получи расписание.")
         user_id = message.from_user.id
-        bot.send_message(message.from_user.id, user_id)
+        bot.send_message(815652307, user_id)
     else:
         keyboard = telebot.types.InlineKeyboardMarkup()
         key_1 = telebot.types.InlineKeyboardButton(text='Расписание 11 а', callback_data='rasp')
