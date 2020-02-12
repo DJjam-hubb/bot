@@ -10,14 +10,17 @@ bot = telebot.TeleBot('1050229554:AAFPkDrue8DnVa3T1ir-nCv3xg3Nq4ww-jA')
 @bot.message_handler(content_types=['text'])
 
 def get_text_messages(message):
-    keyboard = telebot.types.InlineKeyboardMarkup()
-    key_1 = telebot.types.InlineKeyboardButton(text='Расписание 11 а', callback_data='rasp')
-    keyboard.add(key_1)
-    key_1_1 = telebot.types.InlineKeyboardButton(text='Расписание 11 б', callback_data='rasp1')
-    keyboard.add(key_1_1)
-    key_3 = telebot.types.InlineKeyboardButton(text='До ЕГЭ...', callback_data='ege')
-    keyboard.add(key_3)
-    bot.send_message(message.from_user.id, text="Привет :)", reply_markup=keyboard)
+    if message == "/start":
+        bot.send_message(get_text_messages.from_user.id, "Привет,я Шпипс отправь мне любое сообщение и получи расписание.")
+    else:
+        keyboard = telebot.types.InlineKeyboardMarkup()
+        key_1 = telebot.types.InlineKeyboardButton(text='Расписание 11 а', callback_data='rasp')
+        keyboard.add(key_1)
+        key_1_1 = telebot.types.InlineKeyboardButton(text='Расписание 11 б', callback_data='rasp1')
+        keyboard.add(key_1_1)
+        key_3 = telebot.types.InlineKeyboardButton(text='До ЕГЭ...', callback_data='ege')
+        keyboard.add(key_3)
+        bot.send_message(message.from_user.id, text="Привет :)", reply_markup=keyboard)
 @bot.callback_query_handler(func=lambda call: True)
 def callback_worker(call):
 
