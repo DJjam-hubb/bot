@@ -296,8 +296,8 @@ def callback_worker(call):
         if "Алгебраиначалаанализа" in a:
             a = a.replace("Алгебраиначалаанализа", "Алгебра")
 
-        bot.send_message(call.from_user.id, a, z)
-
+        bot.send_message(call.from_user.id, a)
+        bot.send_message(call.from_user.id, z)
 
     if call.data == "ege":
         q = str(datetime.now())
