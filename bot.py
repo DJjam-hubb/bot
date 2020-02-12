@@ -10,7 +10,7 @@ bot = telebot.TeleBot('1050229554:AAFPkDrue8DnVa3T1ir-nCv3xg3Nq4ww-jA')
 @bot.message_handler(content_types=['text'])
 
 def get_text_messages(message):
-    if message == "/start":
+    if message.text == "/start":
         bot.send_message(get_text_messages.from_user.id, "Привет,я Шпипс отправь мне любое сообщение и получи расписание.")
     else:
         keyboard = telebot.types.InlineKeyboardMarkup()
