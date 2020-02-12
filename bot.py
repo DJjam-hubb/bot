@@ -130,7 +130,7 @@ def callback_worker(call):
         page6 = page[l6:l7].split("<td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
         page6 = page6[21]
         page6 = [word for word in page6 if 1039 < ord(word[0])]
-        page6 = "6) " + "".join(page6)
+        page6 = "".join(page6)
         if "Б" in page6[5:]:
             page6 = page6.replace("Б", " / Б")
         elif "Х" in page6[5:]:
@@ -294,7 +294,7 @@ def callback_worker(call):
         page6 = page[l6:l7].split("<td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
         page6 = page6[22]
         page6 = [word for word in page6 if 1039 < ord(word[0])]
-        page6 = "6) " + "".join(page6)
+        page6 = "".join(page6)
         if "Б" in page6[5:]:
             page6 = page6.replace("Б", " / Б")
         elif "Х" in page6[5:]:
