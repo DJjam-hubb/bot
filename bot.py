@@ -34,7 +34,6 @@ def callback_worker(call):
         urll = urll[z:]
         z = urll.index('"')
         x = urll[:z]
-        bot.send_message(call.from_user.id, x)
         date = x[31:36] + ".2020"
         result = requests.get(x, timeout=30.0)
         result.encoding = 'cp1251'
@@ -171,9 +170,10 @@ def callback_worker(call):
         res.encoding = 'cp1251'
         urll = res.text
         z = urll.index("http://brgi.ucoz.ru/raspisanie/")
-        x = urll[z:z + 41]
-
-        date = urll[z + 31:z + 36] + ".2020"
+        urll = urll[z:]
+        z = urll.index('"')
+        x = urll[:z]
+        date = x[31:36] + ".2020"
         result = requests.get(x, timeout=30.0)
         result.encoding = 'cp1251'
         page = result.text
