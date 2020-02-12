@@ -11,7 +11,7 @@ bot = telebot.TeleBot('1050229554:AAFPkDrue8DnVa3T1ir-nCv3xg3Nq4ww-jA')
 
 def get_text_messages(message):
     if message.text == "/start":
-        bot.send_message(get_text_messages.from_user.id, "Привет,я Шпипс отправь мне любое сообщение и получи расписание.")
+        bot.send_message(message.from_user.id, "Привет,я Шпипс отправь мне любое сообщение и получи расписание.")
     else:
         keyboard = telebot.types.InlineKeyboardMarkup()
         key_1 = telebot.types.InlineKeyboardButton(text='Расписание 11 а', callback_data='rasp')
