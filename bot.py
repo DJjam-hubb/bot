@@ -338,7 +338,7 @@ def callback_worker(call):
         if len(page8) != 0:
             page8 = "8) " + page8
 
-        a = "Расписание 11а на " + date + "\n" + "\n"
+        a = "Расписание 11б на " + date + "\n" + "\n"
         a += page1 + "\n" + page2 + "\n" + page3 + "\n" + page4 + "\n" + page5 + "\n" + page6 + "\n" + page7 + "\n"
 
         if "язык" in a:
