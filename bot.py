@@ -32,7 +32,7 @@ def callback_worker(call):
         urll = res.text
         z = urll.index("http://brgi.ucoz.ru/raspisanie/")
 
-        x = urll[z:z + 46]
+        x = urll[z:z + 41]
         date = urll[z + 31:z + 36] + ".2020"
         result = requests.get(x, timeout=30.0)
         result.encoding = 'cp1251'
@@ -169,7 +169,7 @@ def callback_worker(call):
         res.encoding = 'cp1251'
         urll = res.text
         z = urll.index("http://brgi.ucoz.ru/raspisanie/")
-        x = urll[z:z + 46]
+        x = urll[z:z + 41]
 
         date = urll[z + 31:z + 36] + ".2020"
         result = requests.get(x, timeout=30.0)
