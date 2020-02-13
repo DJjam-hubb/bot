@@ -19,7 +19,7 @@ def get_text_messages(message):
             bot.send_message(815652307, message.text)
         if user_id == 815652307:
             if message.text[0] == "+":
-                bot.send_message(935687656, message.text[1:])
+                bot.send_message(972959464, message.text[1:])
         keyboard = telebot.types.InlineKeyboardMarkup()
         key_1 = telebot.types.InlineKeyboardButton(text='Расписание 11 а', callback_data='rasp')
         keyboard.add(key_1)
