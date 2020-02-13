@@ -29,7 +29,6 @@ def get_text_messages(message):
 @bot.callback_query_handler(func=lambda call: True)
 def callback_worker(call):
     if call.data == "rasp":
-
         res = requests.get('http://brgi.ucoz.ru/index/raspisanie_urokov/0-65', timeout=30.0)
         res.encoding = 'cp1251'
         urll = res.text
@@ -37,13 +36,11 @@ def callback_worker(call):
         urll = urll[z:]
         z = urll.index('"')
         x = urll[:z]
-       
-        
+
         date = x[31:36] + ".2020"
         result = requests.get(x, timeout=30.0)
         result.encoding = 'cp1251'
         page = result.text
-         bot.send_message(call.from_user.id, page)
         l1 = page.index('09:15')
         l2 = page.index('10:10')
         l3 = page.index('11:15')
@@ -51,7 +48,6 @@ def callback_worker(call):
         l5 = page.index('13:15')
         l6 = page.index('14:15')
         l7 = page.index('15:10')
-        l8 = page.index('16:05')
 
         page1 = page[l1:l2].split(
             "<td class=T1 style=';border-top:2 solid #707070;text-align:left;border-top:2 solid #707070")
@@ -148,7 +144,7 @@ def callback_worker(call):
         if len(page6) != 0:
             page6 = "6) " + page6
 
-        page7 = page[l7:l8].split("<td class=T1 style=';text-align:left'>")
+        page7 = page[l7:-1].split("<td class=T1 style=';text-align:left'>")
         page7 = page7[21]
         page7 = [word for word in page7 if 1039 < ord(word[0])]
         page7 = "".join(page7)
@@ -164,22 +160,7 @@ def callback_worker(call):
         if len(page7) != 0:
             page7 = "7) " + page7
 
-        page8 = page[l8:-1].split("<td class=T1 style=';text-align:left'>")
-        page8 = page8[21]
-        page8 = [word for word in page8 if 1039 < ord(word[0])]
-        page8 = "".join(page8)
-        if "Б" in page8[5:]:
-            page8 = page8.replace("Б", " / Б")
-        elif "Х" in page8[5:]:
-            page8 = page8.replace("Х", " / Х")
-        elif "И" in page8[5:]:
-            page8 = page8.replace("И", " / И")
-        elif "Ф" in page8[5:]:
-            page8 = page8.replace("Ф", " / Ф")
 
-        if len(page8) != 0:
-            page8 = "8) " + page8
-      
         a = "Расписание 11а на " + date + "\n" + "\n"
         a += page1 + "\n" + page2 + "\n" + page3 + "\n" + page4 + "\n" + page5 + "\n" + page6 + "\n" + page7 + "\n"
 
@@ -195,6 +176,7 @@ def callback_worker(call):
             a = a.replace("Алгебраиначалаанализа", "Алгебра")
 
         bot.send_message(call.from_user.id, a)
+
 
     if call.data == "rasp1":
         res = requests.get('http://brgi.ucoz.ru/index/raspisanie_urokov/0-65', timeout=30.0)
@@ -215,7 +197,7 @@ def callback_worker(call):
         l5 = page.index('13:15')
         l6 = page.index('14:15')
         l7 = page.index('15:10')
-        l8 = page.index('16:05')
+
 
         page1 = page[l1:l2].split(
             "<td class=T1 style=';border-top:2 solid #707070;text-align:left;border-top:2 solid #707070")
@@ -312,7 +294,7 @@ def callback_worker(call):
         if len(page6) != 0:
             page6 = "6) " + page6
 
-        page7 = page[l7:l8].split("<td class=T1 style=';text-align:left'>")
+        page7 = page[l7:-1].split("<td class=T1 style=';text-align:left'>")
         page7 = page7[22]
         page7 = [word for word in page7 if 1039 < ord(word[0])]
         page7 = "".join(page7)
@@ -328,21 +310,7 @@ def callback_worker(call):
         if len(page7) != 0:
             page7 = "7) " + page7
 
-        page8 = page[l8:-1].split("<td class=T1 style=';text-align:left'>")
-        page8 = page8[22]
-        page8 = [word for word in page8 if 1039 < ord(word[0])]
-        page8 = "".join(page8)
-        if "Б" in page8[5:]:
-            page8 = page8.replace("Б", " / Б")
-        elif "Х" in page8[5:]:
-            page8 = page8.replace("Х", " / Х")
-        elif "И" in page8[5:]:
-            page8 = page8.replace("И", " / И")
-        elif "Ф" in page8[5:]:
-            page8 = page8.replace("Ф", " / Ф")
 
-        if len(page8) != 0:
-            page8 = "8) " + page8
 
         a = "Расписание 11б на " + date + "\n" + "\n"
         a += page1 + "\n" + page2 + "\n" + page3 + "\n" + page4 + "\n" + page5 + "\n" + page6 + "\n" + page7 + "\n"
@@ -359,7 +327,6 @@ def callback_worker(call):
             a = a.replace("Алгебраиначалаанализа", "Алгебра")
 
         bot.send_message(call.from_user.id, a)
-
 
     if call.data == "ege":
         q = str(datetime.now())
