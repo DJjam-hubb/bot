@@ -37,13 +37,13 @@ def callback_worker(call):
         urll = urll[z:]
         z = urll.index('"')
         x = urll[:z]
-        bot.send_message(call.from_user.id, x)
+       
         
         date = x[31:36] + ".2020"
         result = requests.get(x, timeout=30.0)
         result.encoding = 'cp1251'
         page = result.text
-       
+         bot.send_message(call.from_user.id, page)
         l1 = page.index('09:15')
         l2 = page.index('10:10')
         l3 = page.index('11:15')
@@ -179,10 +179,7 @@ def callback_worker(call):
 
         if len(page8) != 0:
             page8 = "8) " + page8
-        bot.send_message(call.from_user.id, page1)
-        bot.send_message(call.from_user.id, page2)
-        bot.send_message(call.from_user.id, page3)
-        bot.send_message(call.from_user.id, page4)
+      
         a = "Расписание 11а на " + date + "\n" + "\n"
         a += page1 + "\n" + page2 + "\n" + page3 + "\n" + page4 + "\n" + page5 + "\n" + page6 + "\n" + page7 + "\n"
 
