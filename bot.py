@@ -37,7 +37,7 @@ def callback_worker(call):
         res = requests.get('http://brgi.ucoz.ru/index/raspisanie_urokov/0-65', timeout=30.0)
         res.encoding = 'cp1251'
         urll = res.text
-        z = urll.index("http://brgi.ucoz.ru/raspisanie/") 
+        z = urll.index("http://brgi.ucoz.ru/raspisanie/")
         urll = urll[z:]
         z = urll.index('"')
         x = urll[:z]
@@ -53,12 +53,21 @@ def callback_worker(call):
         l5 = page.index('13:15')
         l6 = page.index('14:15')
         l7 = page.index('15:10')
-
+        aud = ["101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "201", "202", "203", "204", "205", "206", '207', "208", "209", "210", "211", "212", "213", "214", "215", "301", "302", "303", "304", "305", "306", "307", "308"]
         page1 = page[l1:l2].split(
             "<td class=T1 style=';border-top:2 solid #707070;text-align:left;border-top:2 solid #707070")
         page1 = page1[21].split(">")
 
         page1 = "".join(page1)
+
+        aud1 = ""
+        for i in range(len(aud)):
+            if aud[i] in page1:
+                aud1 += aud[i]
+        if len(aud1) == 6:
+            aud1 = "(" + aud1[:3] + "/" + aud1[3:] + ")"
+        else:
+            aud1 = "(" + aud1 + ")"
         page1 = [word for word in page1 if 1039 < ord(word[0])]
         page1 = "".join(page1)
         if "Б" in page1[5:]:
@@ -75,6 +84,16 @@ def callback_worker(call):
         page2 = page[l2:l3].split(" <td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
         page2 = page2[21].split(">")
         page2 = "".join(page2)
+
+        aud2 = ""
+        for i in range(len(aud)):
+            if aud[i] in page2:
+                aud2 += aud[i]
+        if len(aud2) == 6:
+            aud2 = "(" + aud2[:3] + "/" + aud2[3:] + ")"
+        else:
+            aud2 = "(" + aud2 + ")"
+
         page2 = [word for word in page2 if 1039 < ord(word[0])]
         page2 = "".join(page2)
         if "Б" in page2[5:]:
@@ -91,6 +110,16 @@ def callback_worker(call):
         page3 = page[l3:l4].split("<td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
         page3 = page3[21]
         page3 = "".join(page3)
+
+        aud3 = ""
+        for i in range(len(aud)):
+            if aud[i] in page3:
+                aud3 += aud[i]
+        if len(aud3) == 6:
+            aud3 = "(" + aud3[:3] + "/" + aud3[3:] + ")"
+        else:
+            aud3 = "(" + aud3 + ")"
+
         page3 = [word for word in page3 if 1039 < ord(word[0])]
         page3 = "".join(page3)
         if "Б" in page3[5:]:
@@ -106,6 +135,16 @@ def callback_worker(call):
 
         page4 = page[l4:l5].split("<td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
         page4 = page4[21]
+
+        aud4 = ""
+        for i in range(len(aud)):
+            if aud[i] in page4:
+                aud4 += aud[i]
+        if len(aud4) == 6:
+            aud4 = "(" + aud4[:3] + "/" + aud4[3:] + ")"
+        else:
+            aud4 = "(" + aud4 + ")"
+
         page4 = [word for word in page4 if 1039 < ord(word[0])]
         page4 = "".join(page4)
         if "Б" in page4[5:]:
@@ -121,6 +160,16 @@ def callback_worker(call):
 
         page5 = page[l5:l6].split(" <td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
         page5 = page5[21]
+
+        aud5 = ""
+        for i in range(len(aud)):
+            if aud[i] in page5:
+                aud5 += aud[i]
+        if len(aud5) == 6:
+            aud5 = "(" + aud5[:3] + "/" + aud5[3:] + ")"
+        else:
+            aud5 = "(" + aud5 + ")"
+
         page5 = [word for word in page5 if 1039 < ord(word[0])]
         page5 = "".join(page5)
         if "Б" in page5[5:]:
@@ -136,6 +185,16 @@ def callback_worker(call):
 
         page6 = page[l6:l7].split("<td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
         page6 = page6[21]
+
+        aud6 = ""
+        for i in range(len(aud)):
+            if aud[i] in page6:
+                aud6 += aud[i]
+        if len(aud6) == 6:
+            aud6 = "(" + aud6[:3] + "/" + aud6[3:] + ")"
+        else:
+            aud6 = "(" + aud6 + ")"
+
         page6 = [word for word in page6 if 1039 < ord(word[0])]
         page6 = "".join(page6)
         if "Б" in page6[5:]:
@@ -151,6 +210,16 @@ def callback_worker(call):
 
         page7 = page[l7:-1].split("<td class=T1 style=';text-align:left'>")
         page7 = page7[21]
+
+        aud7 = ""
+        for i in range(len(aud)):
+            if aud[i] in page7:
+                aud7 += aud[i]
+        if len(aud7) == 6:
+            aud7 = "(" + aud7[:3] + "/" + aud7[3:] + ")"
+        else:
+            aud7 = "(" + aud7 + ")"
+
         page7 = [word for word in page7 if 1039 < ord(word[0])]
         page7 = "".join(page7)
         if "Б" in page7[5:]:
@@ -167,7 +236,7 @@ def callback_worker(call):
 
 
         a = "Расписание 11а на " + date + "\n" + "\n"
-        a += page1 + "\n" + page2 + "\n" + page3 + "\n" + page4 + "\n" + page5 + "\n" + page6 + "\n" + page7 + "\n"
+        a += page1 + aud1 + "\n" + page2 + aud2 + "\n" + page3 + aud3 + "\n" + page4 + aud4 + "\n" + page5 + aud5 + "\n" + page6 + aud6 + "\n" + page7 + aud7 + "\n"
 
         if "язык" in a:
             a = a.replace("язык", " язык")
@@ -191,6 +260,7 @@ def callback_worker(call):
         urll = urll[z:]
         z = urll.index('"')
         x = urll[:z]
+
         date = x[31:36] + ".2020"
         result = requests.get(x, timeout=30.0)
         result.encoding = 'cp1251'
@@ -202,13 +272,23 @@ def callback_worker(call):
         l5 = page.index('13:15')
         l6 = page.index('14:15')
         l7 = page.index('15:10')
-
-
+        aud = ["101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "201", "202", "203", "204", "205",
+               "206", '207', "208", "209", "210", "211", "212", "213", "214", "215", "301", "302", "303", "304", "305",
+               "306", "307", "308"]
         page1 = page[l1:l2].split(
             "<td class=T1 style=';border-top:2 solid #707070;text-align:left;border-top:2 solid #707070")
         page1 = page1[22].split(">")
 
         page1 = "".join(page1)
+
+        aud1 = ""
+        for i in range(len(aud)):
+            if aud[i] in page1:
+                aud1 += aud[i]
+        if len(aud1) == 6:
+            aud1 = "(" + aud1[:3] + "/" + aud1[3:] + ")"
+        else:
+            aud1 = "(" + aud1 + ")"
         page1 = [word for word in page1 if 1039 < ord(word[0])]
         page1 = "".join(page1)
         if "Б" in page1[5:]:
@@ -225,6 +305,16 @@ def callback_worker(call):
         page2 = page[l2:l3].split(" <td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
         page2 = page2[22].split(">")
         page2 = "".join(page2)
+
+        aud2 = ""
+        for i in range(len(aud)):
+            if aud[i] in page2:
+                aud2 += aud[i]
+        if len(aud2) == 6:
+            aud2 = "(" + aud2[:3] + "/" + aud2[3:] + ")"
+        else:
+            aud2 = "(" + aud2 + ")"
+
         page2 = [word for word in page2 if 1039 < ord(word[0])]
         page2 = "".join(page2)
         if "Б" in page2[5:]:
@@ -241,6 +331,16 @@ def callback_worker(call):
         page3 = page[l3:l4].split("<td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
         page3 = page3[22]
         page3 = "".join(page3)
+
+        aud3 = ""
+        for i in range(len(aud)):
+            if aud[i] in page3:
+                aud3 += aud[i]
+        if len(aud3) == 6:
+            aud3 = "(" + aud3[:3] + "/" + aud3[3:] + ")"
+        else:
+            aud3 = "(" + aud3 + ")"
+
         page3 = [word for word in page3 if 1039 < ord(word[0])]
         page3 = "".join(page3)
         if "Б" in page3[5:]:
@@ -256,6 +356,16 @@ def callback_worker(call):
 
         page4 = page[l4:l5].split("<td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
         page4 = page4[22]
+
+        aud4 = ""
+        for i in range(len(aud)):
+            if aud[i] in page4:
+                aud4 += aud[i]
+        if len(aud4) == 6:
+            aud4 = "(" + aud4[:3] + "/" + aud4[3:] + ")"
+        else:
+            aud4 = "(" + aud4 + ")"
+
         page4 = [word for word in page4 if 1039 < ord(word[0])]
         page4 = "".join(page4)
         if "Б" in page4[5:]:
@@ -271,6 +381,16 @@ def callback_worker(call):
 
         page5 = page[l5:l6].split(" <td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
         page5 = page5[22]
+
+        aud5 = ""
+        for i in range(len(aud)):
+            if aud[i] in page5:
+                aud5 += aud[i]
+        if len(aud5) == 6:
+            aud5 = "(" + aud5[:3] + "/" + aud5[3:] + ")"
+        else:
+            aud5 = "(" + aud5 + ")"
+
         page5 = [word for word in page5 if 1039 < ord(word[0])]
         page5 = "".join(page5)
         if "Б" in page5[5:]:
@@ -286,6 +406,16 @@ def callback_worker(call):
 
         page6 = page[l6:l7].split("<td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
         page6 = page6[22]
+
+        aud6 = ""
+        for i in range(len(aud)):
+            if aud[i] in page6:
+                aud6 += aud[i]
+        if len(aud6) == 6:
+            aud6 = "(" + aud6[:3] + "/" + aud6[3:] + ")"
+        else:
+            aud6 = "(" + aud6 + ")"
+
         page6 = [word for word in page6 if 1039 < ord(word[0])]
         page6 = "".join(page6)
         if "Б" in page6[5:]:
@@ -301,6 +431,16 @@ def callback_worker(call):
 
         page7 = page[l7:-1].split("<td class=T1 style=';text-align:left'>")
         page7 = page7[22]
+
+        aud7 = ""
+        for i in range(len(aud)):
+            if aud[i] in page7:
+                aud7 += aud[i]
+        if len(aud7) == 6:
+            aud7 = "(" + aud7[:3] + "/" + aud7[3:] + ")"
+        else:
+            aud7 = "(" + aud7 + ")"
+
         page7 = [word for word in page7 if 1039 < ord(word[0])]
         page7 = "".join(page7)
         if "Б" in page7[5:]:
@@ -315,10 +455,8 @@ def callback_worker(call):
         if len(page7) != 0:
             page7 = "7) " + page7
 
-
-
         a = "Расписание 11б на " + date + "\n" + "\n"
-        a += page1 + "\n" + page2 + "\n" + page3 + "\n" + page4 + "\n" + page5 + "\n" + page6 + "\n" + page7 + "\n"
+        a += page1 + aud1 + "\n" + page2 + aud2 + "\n" + page3 + aud3 + "\n" + page4 + aud4 + "\n" + page5 + aud5 + "\n" + page6 + aud6 + "\n" + page7 + aud7 + "\n"
 
         if "язык" in a:
             a = a.replace("язык", " язык")
