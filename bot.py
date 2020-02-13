@@ -8,13 +8,7 @@ bot = telebot.TeleBot('1050229554:AAFPkDrue8DnVa3T1ir-nCv3xg3Nq4ww-jA')
 
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
-    dan = str(message.text)
-    Ad = dan[:7]
-    if Ad == "bot1516":
-        dan = dan[7:]
-        bot.send_message(935687656, dan)
-        bot.send_message(815652307, "/\")
-        
+
     if message.text == "/start":
         bot.send_message(message.from_user.id, "Привет,я Шпипс отправь мне любое сообщение и получи расписание.")
         user_id = message.from_user.id
