@@ -37,6 +37,8 @@ def callback_worker(call):
         urll = urll[z:]
         z = urll.index('"')
         x = urll[:z]
+        bot.send_message(call.from_user.id, x)
+        
         date = x[31:36] + ".2020"
         result = requests.get(x, timeout=30.0)
         result.encoding = 'cp1251'
