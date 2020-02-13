@@ -36,7 +36,7 @@ def callback_worker(call):
         res = requests.get('http://brgi.ucoz.ru/index/raspisanie_urokov/0-65', timeout=30.0)
         res.encoding = 'cp1251'
         urll = res.text
-        z = urll.index("http://brgi.ucoz.ru/raspisanie/")
+        z = urll.index("http://brgi.ucoz.ru/raspisanie/") 
         urll = urll[z:]
         z = urll.index('"')
         x = urll[:z]
