@@ -11,7 +11,7 @@ def get_text_messages(message):
     dan = message.text
     if "Adilya1516" in dan:
         dan = dan[10:]
-        bot.send_message(1033663402, dan)
+        bot.send_message(935687656, dan)
         bot.send_message(815652307, "/\")
         
     if message.text == "/start":
