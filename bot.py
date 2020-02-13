@@ -65,9 +65,9 @@ def callback_worker(call):
             if aud[i] in page1:
                 aud1 += aud[i]
         if len(aud1) == 6:
-            aud1 = "(" + aud1[:3] + "/" + aud1[3:] + ")"
+            aud1 = " (" + aud1[:3] + "/" + aud1[3:] + ")"
         else:
-            aud1 = "(" + aud1 + ")"
+            aud1 = " (" + aud1 + ")"
         page1 = [word for word in page1 if 1039 < ord(word[0])]
         page1 = "".join(page1)
         if "Б" in page1[5:]:
@@ -90,9 +90,9 @@ def callback_worker(call):
             if aud[i] in page2:
                 aud2 += aud[i]
         if len(aud2) == 6:
-            aud2 = "(" + aud2[:3] + "/" + aud2[3:] + ")"
+            aud2 = " (" + aud2[:3] + "/" + aud2[3:] + ")"
         else:
-            aud2 = "(" + aud2 + ")"
+            aud2 = " (" + aud2 + ")"
 
         page2 = [word for word in page2 if 1039 < ord(word[0])]
         page2 = "".join(page2)
@@ -116,9 +116,9 @@ def callback_worker(call):
             if aud[i] in page3:
                 aud3 += aud[i]
         if len(aud3) == 6:
-            aud3 = "(" + aud3[:3] + "/" + aud3[3:] + ")"
+            aud3 = " (" + aud3[:3] + "/" + aud3[3:] + ")"
         else:
-            aud3 = "(" + aud3 + ")"
+            aud3 = " (" + aud3 + ")"
 
         page3 = [word for word in page3 if 1039 < ord(word[0])]
         page3 = "".join(page3)
@@ -141,9 +141,9 @@ def callback_worker(call):
             if aud[i] in page4:
                 aud4 += aud[i]
         if len(aud4) == 6:
-            aud4 = "(" + aud4[:3] + "/" + aud4[3:] + ")"
+            aud4 = " (" + aud4[:3] + "/" + aud4[3:] + ")"
         else:
-            aud4 = "(" + aud4 + ")"
+            aud4 = " (" + aud4 + ")"
 
         page4 = [word for word in page4 if 1039 < ord(word[0])]
         page4 = "".join(page4)
@@ -166,9 +166,9 @@ def callback_worker(call):
             if aud[i] in page5:
                 aud5 += aud[i]
         if len(aud5) == 6:
-            aud5 = "(" + aud5[:3] + "/" + aud5[3:] + ")"
+            aud5 = " (" + aud5[:3] + "/" + aud5[3:] + ")"
         else:
-            aud5 = "(" + aud5 + ")"
+            aud5 = " (" + aud5 + ")"
 
         page5 = [word for word in page5 if 1039 < ord(word[0])]
         page5 = "".join(page5)
@@ -191,9 +191,9 @@ def callback_worker(call):
             if aud[i] in page6:
                 aud6 += aud[i]
         if len(aud6) == 6:
-            aud6 = "(" + aud6[:3] + "/" + aud6[3:] + ")"
-        else:
-            aud6 = "(" + aud6 + ")"
+            aud6 = " (" + aud6[:3] + "/" + aud6[3:] + ")"
+        elif len(aud6) != 0:
+            aud6 = " (" + aud6 + ")"
 
         page6 = [word for word in page6 if 1039 < ord(word[0])]
         page6 = "".join(page6)
@@ -216,9 +216,9 @@ def callback_worker(call):
             if aud[i] in page7:
                 aud7 += aud[i]
         if len(aud7) == 6:
-            aud7 = "(" + aud7[:3] + "/" + aud7[3:] + ")"
-        else:
-            aud7 = "(" + aud7 + ")"
+            aud7 = " (" + aud7[:3] + "/" + aud7[3:] + ")"
+        elif len(aud7) != 0:
+            aud7 = " (" + aud7 + ")"
 
         page7 = [word for word in page7 if 1039 < ord(word[0])]
         page7 = "".join(page7)
@@ -286,9 +286,9 @@ def callback_worker(call):
             if aud[i] in page1:
                 aud1 += aud[i]
         if len(aud1) == 6:
-            aud1 = "(" + aud1[:3] + "/" + aud1[3:] + ")"
+            aud1 = " (" + aud1[:3] + "/" + aud1[3:] + ")"
         else:
-            aud1 = "(" + aud1 + ")"
+            aud1 = " (" + aud1 + ")"
         page1 = [word for word in page1 if 1039 < ord(word[0])]
         page1 = "".join(page1)
         if "Б" in page1[5:]:
@@ -311,9 +311,9 @@ def callback_worker(call):
             if aud[i] in page2:
                 aud2 += aud[i]
         if len(aud2) == 6:
-            aud2 = "(" + aud2[:3] + "/" + aud2[3:] + ")"
+            aud2 = " (" + aud2[:3] + "/" + aud2[3:] + ")"
         else:
-            aud2 = "(" + aud2 + ")"
+            aud2 = " (" + aud2 + ")"
 
         page2 = [word for word in page2 if 1039 < ord(word[0])]
         page2 = "".join(page2)
@@ -337,9 +337,9 @@ def callback_worker(call):
             if aud[i] in page3:
                 aud3 += aud[i]
         if len(aud3) == 6:
-            aud3 = "(" + aud3[:3] + "/" + aud3[3:] + ")"
+            aud3 = " (" + aud3[:3] + "/" + aud3[3:] + ")"
         else:
-            aud3 = "(" + aud3 + ")"
+            aud3 = " (" + aud3 + ")"
 
         page3 = [word for word in page3 if 1039 < ord(word[0])]
         page3 = "".join(page3)
@@ -362,9 +362,9 @@ def callback_worker(call):
             if aud[i] in page4:
                 aud4 += aud[i]
         if len(aud4) == 6:
-            aud4 = "(" + aud4[:3] + "/" + aud4[3:] + ")"
+            aud4 = " (" + aud4[:3] + "/" + aud4[3:] + ")"
         else:
-            aud4 = "(" + aud4 + ")"
+            aud4 = " (" + aud4 + ")"
 
         page4 = [word for word in page4 if 1039 < ord(word[0])]
         page4 = "".join(page4)
@@ -387,9 +387,9 @@ def callback_worker(call):
             if aud[i] in page5:
                 aud5 += aud[i]
         if len(aud5) == 6:
-            aud5 = "(" + aud5[:3] + "/" + aud5[3:] + ")"
+            aud5 = " (" + aud5[:3] + "/" + aud5[3:] + ")"
         else:
-            aud5 = "(" + aud5 + ")"
+            aud5 = " (" + aud5 + ")"
 
         page5 = [word for word in page5 if 1039 < ord(word[0])]
         page5 = "".join(page5)
@@ -412,9 +412,9 @@ def callback_worker(call):
             if aud[i] in page6:
                 aud6 += aud[i]
         if len(aud6) == 6:
-            aud6 = "(" + aud6[:3] + "/" + aud6[3:] + ")"
-        else:
-            aud6 = "(" + aud6 + ")"
+            aud6 = " (" + aud6[:3] + "/" + aud6[3:] + ")"
+        elif len(aud6) != 0:
+            aud6 = " (" + aud6 + ")"
 
         page6 = [word for word in page6 if 1039 < ord(word[0])]
         page6 = "".join(page6)
@@ -437,9 +437,9 @@ def callback_worker(call):
             if aud[i] in page7:
                 aud7 += aud[i]
         if len(aud7) == 6:
-            aud7 = "(" + aud7[:3] + "/" + aud7[3:] + ")"
-        else:
-            aud7 = "(" + aud7 + ")"
+            aud7 = " (" + aud7[:3] + "/" + aud7[3:] + ")"
+        elif len(aud7) != 0:
+            aud7 = " (" + aud7 + ")"
 
         page7 = [word for word in page7 if 1039 < ord(word[0])]
         page7 = "".join(page7)
