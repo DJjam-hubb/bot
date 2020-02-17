@@ -72,7 +72,7 @@ def callback_worker(call):
         page1 = "".join(page1)
         if "Б" in page1[5:]:
             page1 = page1.replace("Б", " / Б")
-        elif "Х" in page1[5:]:
+        elif "Х" in page1[3:]:
             page1 = page1.replace("Х", " / Х")
         elif "И" in page1[5:]:
             page1 = page1.replace("И", " / И")
@@ -98,7 +98,7 @@ def callback_worker(call):
         page2 = "".join(page2)
         if "Б" in page2[5:]:
             page2 = page2.replace("Б", " / Б")
-        elif "Х" in page2[5:]:
+        elif "Х" in page2[3:]:
             page2 = page2.replace("Х", " / Х")
         elif "И" in page2[5:]:
             page2 = page2.replace("И", " / И")
@@ -124,7 +124,7 @@ def callback_worker(call):
         page3 = "".join(page3)
         if "Б" in page3[5:]:
             page3 = page3.replace("Б", " / Б")
-        elif "Х" in page3[5:]:
+        elif "Х" in page3[3:]:
             page3 = page3.replace("Х", " / Х")
         elif "И" in page3[5:]:
             page3 = page3.replace("И", " / И")
@@ -149,7 +149,7 @@ def callback_worker(call):
         page4 = "".join(page4)
         if "Б" in page4[5:]:
             page4 = page4.replace("Б", " / Б")
-        elif "Х" in page4[5:]:
+        elif "Х" in page4[3:]:
             page4 = page4.replace("Х", " / Х")
         elif "И" in page4[5:]:
             page4 = page4.replace("И", " / И")
@@ -174,7 +174,7 @@ def callback_worker(call):
         page5 = "".join(page5)
         if "Б" in page5[5:]:
             page5 = page5.replace("Б", " / Б")
-        elif "Х" in page5[5:]:
+        elif "Х" in page5[3:]:
             page5 = page5.replace("Х", " / Х")
         elif "И" in page5[5:]:
             page5 = page5.replace("И", " / И")
@@ -199,7 +199,7 @@ def callback_worker(call):
         page6 = "".join(page6)
         if "Б" in page6[5:]:
             page6 = page6.replace("Б", " / Б")
-        elif "Х" in page6[5:]:
+        elif "Х" in page6[3:]:
             page6 = page6.replace("Х", " / Х")
         elif "И" in page6[5:]:
             page6 = page6.replace("И", " / И")
@@ -224,7 +224,7 @@ def callback_worker(call):
         page7 = "".join(page7)
         if "Б" in page7[5:]:
             page7 = page7.replace("Б", " / Б")
-        elif "Х" in page7[5:]:
+        elif "Х" in page7[3:]:
             page7 = page7.replace("Х", " / Х")
         elif "И" in page7[5:]:
             page7 = page7.replace("И", " / И")
