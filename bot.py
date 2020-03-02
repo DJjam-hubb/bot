@@ -10,7 +10,7 @@ bot = telebot.TeleBot('1050229554:AAFPkDrue8DnVa3T1ir-nCv3xg3Nq4ww-jA')
 def get_text_messages(message):
 
     if message.text == "/start":
-        bot.send_message(message.from_user.id, "Привет,я Шпипс отправь мне любое сообщение и получи расписание.")
+        bot.send_message(message.from_user.id, "Привет,я Шпилс отправь мне любое сообщение и получи расписание.")
         user_id = message.from_user.id
         bot.send_message(815652307, user_id)
     else:
@@ -21,6 +21,8 @@ def get_text_messages(message):
             if message.text[0] == "+":
                 bot.send_message(1033663402, message.text[1:])
                 bot.send_message(815652307, "+")
+        elif message.text[0] != "+":
+            bot.send_message(815652307, message.text)
         keyboard = telebot.types.InlineKeyboardMarkup()
         key_1 = telebot.types.InlineKeyboardButton(text='Расписание 11 а', callback_data='rasp')
         keyboard.add(key_1)
