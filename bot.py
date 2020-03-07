@@ -38,12 +38,11 @@ def callback_worker(call):
         res = requests.get('http://brgi.ucoz.ru/index/raspisanie_urokov/0-65', timeout=30.0)
         res.encoding = 'cp1251'
         urll = res.text
-        z = urll.index("http://brgi.ucoz.ru/raspisanie/")
+        z = urll.index("/raspisanie/")
         urll = urll[z:]
         z = urll.index('"')
-        x = urll[:z]
-        bot.send_message(815652307, x)
-
+        x = "http://brgi.ucoz.ru" + urll[:z]
+        
         date = x[31:36] + ".2020"
         result = requests.get(x, timeout=30.0)
         result.encoding = 'cp1251'
