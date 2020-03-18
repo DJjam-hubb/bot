@@ -60,7 +60,7 @@ def callback_worker(call):
         aud = ["101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "201", "202", "203", "204", "205", "206", '207', "209", "210", "211", "212", "213", "214", "215", "301", "302", "303", "304", "305", "306", "307", "308", "208"]
         page1 = page[l1:l2].split(
             "<td class=T1 style=';border-top:2 solid #707070;text-align:left;border-top:2 solid #707070")
-        page1 = page1[21].split(">")
+        page1 = page1[-2].split(">")
 
         page1 = "".join(page1)
 
@@ -86,7 +86,7 @@ def callback_worker(call):
             page1 = "1) " + page1
 
         page2 = page[l2:l3].split(" <td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
-        page2 = page2[21].split(">")
+        page2 = page2[-2].split(">")
         page2 = "".join(page2)
 
         aud2 = ""
@@ -112,7 +112,7 @@ def callback_worker(call):
             page2 = "2) " + page2
 
         page3 = page[l3:l4].split("<td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
-        page3 = page3[21]
+        page3 = page3[-2]
         page3 = "".join(page3)
 
         aud3 = ""
@@ -138,7 +138,7 @@ def callback_worker(call):
             page3 = "3) " + page3
 
         page4 = page[l4:l5].split("<td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
-        page4 = page4[21]
+        page4 = page4[-2]
 
         aud4 = ""
         for i in range(len(aud)):
@@ -163,7 +163,7 @@ def callback_worker(call):
             page4 = "4) " + page4
 
         page5 = page[l5:l6].split(" <td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
-        page5 = page5[21]
+        page5 = page5[-2]
 
         aud5 = ""
         for i in range(len(aud)):
@@ -188,7 +188,7 @@ def callback_worker(call):
             page5 = "5) " + page5
 
         page6 = page[l6:l7].split("<td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
-        page6 = page6[21]
+        page6 = page6[-2]
 
         aud6 = ""
         for i in range(len(aud)):
@@ -213,7 +213,7 @@ def callback_worker(call):
             page6 = "6) " + page6
 
         page7 = page[l7:-1].split("<td class=T1 style=';text-align:left'>")
-        page7 = page7[21]
+        page7 = page7[-2]
 
         aud7 = ""
         for i in range(len(aud)):
@@ -284,7 +284,7 @@ def callback_worker(call):
                "306", "307", "308"]
         page1 = page[l1:l2].split(
             "<td class=T1 style=';border-top:2 solid #707070;text-align:left;border-top:2 solid #707070")
-        page1 = page1[22].split(">")
+        page1 = page1[-1].split(">")
 
         page1 = "".join(page1)
 
@@ -310,7 +310,7 @@ def callback_worker(call):
             page1 = "1) " + page1
 
         page2 = page[l2:l3].split(" <td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
-        page2 = page2[22].split(">")
+        page2 = page2[-1].split(">")
         page2 = "".join(page2)
 
         aud2 = ""
@@ -336,7 +336,7 @@ def callback_worker(call):
             page2 = "2) " + page2
 
         page3 = page[l3:l4].split("<td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
-        page3 = page3[22]
+        page3 = page3[-1]
         page3 = "".join(page3)
 
         aud3 = ""
@@ -362,7 +362,7 @@ def callback_worker(call):
             page3 = "3) " + page3
 
         page4 = page[l4:l5].split("<td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
-        page4 = page4[22]
+        page4 = page4[-1]
 
         aud4 = ""
         for i in range(len(aud)):
@@ -387,7 +387,7 @@ def callback_worker(call):
             page4 = "4) " + page4
 
         page5 = page[l5:l6].split(" <td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
-        page5 = page5[22]
+        page5 = page5[-1]
 
         aud5 = ""
         for i in range(len(aud)):
@@ -412,7 +412,7 @@ def callback_worker(call):
             page5 = "5) " + page5
 
         page6 = page[l6:l7].split("<td class=T1 style=';text-align:left'><table cellspacing=0 border=0")
-        page6 = page6[22]
+        page6 = page6[-1]
 
         aud6 = ""
         for i in range(len(aud)):
@@ -437,7 +437,7 @@ def callback_worker(call):
             page6 = "6) " + page6
 
         page7 = page[l7:-1].split("<td class=T1 style=';text-align:left'>")
-        page7 = page7[22]
+        page7 = page7[-1]
 
         aud7 = ""
         for i in range(len(aud)):
