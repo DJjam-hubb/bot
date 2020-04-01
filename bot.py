@@ -8,11 +8,10 @@ bot = telebot.TeleBot('1050229554:AAFPkDrue8DnVa3T1ir-nCv3xg3Nq4ww-jA')
 
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
-
     if message.text == "/start":
         bot.send_message(message.from_user.id, "Привет,я Шпилс отправь мне любое сообщение и получи расписание.")
         user_id = message.from_user.id
-        bot.send_message(815652307, user_id)
+        bot.send_message(815652307, message)
     else:
         user_id = message.from_user.id
         if user_id == 1033663402:
@@ -21,15 +20,12 @@ def get_text_messages(message):
             if message.text[0] == "+":
                 bot.send_message(1033663402, message.text[1:])
                 bot.send_message(815652307, "+")
-        
+
         keyboard = telebot.types.InlineKeyboardMarkup()
         key_3 = telebot.types.InlineKeyboardButton(text='До ЕГЭ...', callback_data='ege')
         keyboard.add(key_3)
-        y = ":)"
-        if user_id == 815652307:
-            if message.text[0] == "-":
-                y = message.text[1:]
-        bot.send_message(message.from_user.id, text=у, reply_markup=keyboard)
+        rtx = message.from_user.first_name
+        bot.send_message(message.from_user.id, text= "Привет, " + rtx , reply_markup=keyboard)
 
 
 @bot.callback_query_handler(func=lambda call: True)
@@ -42,7 +38,7 @@ def callback_worker(call):
         urll = urll[z:]
         z = urll.index('"')
         x = "http://brgi.ucoz.ru" + urll[:z]
-        
+
         date = x[31:36] + ".2020"
         result = requests.get(x, timeout=30.0)
         result.encoding = 'cp1251'
@@ -57,7 +53,9 @@ def callback_worker(call):
             l7 = page.index('15:10')
         else:
             l7 = None
-        aud = ["101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "201", "202", "203", "204", "205", "206", '207', "209", "210", "211", "212", "213", "214", "215", "301", "302", "303", "304", "305", "306", "307", "308", "208"]
+        aud = ["101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "201", "202", "203", "204", "205",
+               "206", '207', "209", "210", "211", "212", "213", "214", "215", "301", "302", "303", "304", "305", "306",
+               "307", "308", "208"]
         page1 = page[l1:l2].split(
             "<td class=T1 style=';border-top:2 solid #707070;text-align:left;border-top:2 solid #707070")
         page1 = page1[-2].split(">")
@@ -238,7 +236,6 @@ def callback_worker(call):
         if len(page7) != 0:
             page7 = "7) " + page7
 
-
         a = "Расписание 11а на " + date + "\n" + "\n"
         a += page1 + aud1 + "\n" + page2 + aud2 + "\n" + page3 + aud3 + "\n" + page4 + aud4 + "\n" + page5 + aud5 + "\n" + page6 + aud6 + "\n" + page7 + aud7 + "\n"
 
@@ -254,7 +251,6 @@ def callback_worker(call):
             a = a.replace("Алгебраиначалаанализа", "Алгебра")
 
         bot.send_message(call.from_user.id, a)
-
 
     if call.data == "rasp1":
         res = requests.get('http://brgi.ucoz.ru/index/raspisanie_urokov/0-65', timeout=30.0)
@@ -486,5 +482,6 @@ def callback_worker(call):
         d2 = datetime.strptime("8.06.2020", "%d.%m.%Y")
         q = str((d2 - d1).days) + " дн. (до 8 июня)"
         bot.send_message(call.from_user.id, q)
+
 
 bot.polling(none_stop=True)
