@@ -23,13 +23,13 @@ def get_text_messages(message):
                 bot.send_message(815652307, "+")
         
         keyboard = telebot.types.InlineKeyboardMarkup()
-        key_1 = telebot.types.InlineKeyboardButton(text='Расписание 11 а', callback_data='rasp')
-        keyboard.add(key_1)
-        key_1_1 = telebot.types.InlineKeyboardButton(text='Расписание 11 б', callback_data='rasp1')
-        keyboard.add(key_1_1)
         key_3 = telebot.types.InlineKeyboardButton(text='До ЕГЭ...', callback_data='ege')
         keyboard.add(key_3)
-        bot.send_message(message.from_user.id, text="Привет :)", reply_markup=keyboard)
+        y = ":)"
+        if user_id == 815652307:
+            if message.text[0] == "-":
+                y = message.text[1:]
+        bot.send_message(message.from_user.id, text=у, reply_markup=keyboard)
 
 
 @bot.callback_query_handler(func=lambda call: True)
@@ -483,8 +483,8 @@ def callback_worker(call):
         q = q[:10]
         q = q[-2:] + "." + q[-5:-3] + "." + "2020"
         d1 = datetime.strptime(q, "%d.%m.%Y")
-        d2 = datetime.strptime("25.05.2020", "%d.%m.%Y")
-        q = str((d2 - d1).days) + " дн. (до 25 мая)"
+        d2 = datetime.strptime("8.06.2020", "%d.%m.%Y")
+        q = str((d2 - d1).days) + " дн. (до 8 июня)"
         bot.send_message(call.from_user.id, q)
 
 bot.polling(none_stop=True)
